@@ -284,7 +284,7 @@ function infoservices_speakextennum($c) {
     $ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
 
     $ext->add($id, $c, '', new ext_set('CONNECTEDLINE(name-charset,i)', 'utf8'));
-    $ext->add($id, $c, '', new ext_set('CONNECTEDLINE(name,i)', _("Speak Extension")));
+    $ext->add($id, $c, '', new ext_set('CONNECTEDLINE(name,i)', _("Speak Extension Module")));
     $ext->add($id, $c, '', new ext_set('CONNECTEDLINE(num,i)', $c));
     $ext->add($id, $c, '', new ext_answer(''));
     $ext->add($id, $c, '', new ext_wait('1'));
