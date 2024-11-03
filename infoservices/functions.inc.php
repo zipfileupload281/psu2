@@ -296,7 +296,7 @@ function infoservices_speakextennum($c) {
     // English
     $c = "en";
     $ext->add($id, $c, '', new ext_playback('hello')); // Play hello
-    $ext->add($id, $c, '', new ext_playback('/var/spool/asterisk/voicemail/default/${AMPUSER}/greet')); // Dynamic path for the greeting file
+    $ext->add($id, $c, '', new ext_playback('var/spool/asterisk/voicemail/default/${AMPUSER}/greet')); // Dynamic path for the greeting file
     $ext->add($id, $c, '', new ext_playback('your'))
     $ext->add($id, $c, '', new ext_playback('extension'));
     $ext->add($id, $c, '', new ext_playback('number'));
