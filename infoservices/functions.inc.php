@@ -132,25 +132,25 @@ function infoservices_speakingclock($c) {
 		$ext->add($sub, 's', '', new ext_gotoif('$[${DIALPLAN_EXISTS('.$sub.',${CHANNEL(language)},1)}]', $sub.',${CHANNEL(language)},1', $sub.',en,1'));
 
 		$ex = 'en';
-		$ext->add($sub, $ex, '', new ext_playback('at-tone-time-exactly'));
+		$ext->add($sub, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 		$ext->add($sub, $ex, '', new ext_sayunixtime('${FutureTime},,kM \\\'vm-and\\\' S \\\'seconds\\\''));
 		$ext->add($sub, $ex, '', new ext_return(''));
 
 		// French specific language format
 		$ex = 'fr';
-		$ext->add($sub, $ex, '', new ext_playback('at-tone-time-exactly'));
+		$ext->add($sub, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 		$ext->add($sub, $ex, '', new ext_sayunixtime('${FutureTime},,kMS'));
 		$ext->add($sub, $ex, '', new ext_return(''));
 
 		// German specific language format
 		$ex = 'de';
-		$ext->add($sub, $ex, '', new ext_playback('at-tone-time-exactly'));
+		$ext->add($sub, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 		$ext->add($sub, $ex, '', new ext_sayunixtime('${FutureTime},,kMS'));
 		$ext->add($sub, $ex, '', new ext_return(''));
 
 		// Japanese specific language format
 		$ex = 'ja';
-		$ext->add($sub, $ex, '', new ext_playback('at-tone-time-exactly'));
+		$ext->add($sub, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 		$ext->add($sub, $ex, '', new ext_sayunixtime('${FutureTime},,kMS'));
 		$ext->add($sub, $ex, '', new ext_return(''));
 
@@ -165,25 +165,25 @@ function infoservices_speakingclock($c) {
 		$ext->add($sub, 's', '', new ext_gotoif('$[${DIALPLAN_EXISTS('.$sub.',${CHANNEL(language)},1)}]', $sub.',${CHANNEL(language)},1', $sub.',en,1'));
 
 		$ex = 'en';
-		$ext->add($sub, $ex, '', new ext_playback('at-tone-time-exactly'));
+		$ext->add($sub, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 		$ext->add($sub, $ex, '', new ext_sayunixtime('${FutureTime},,IM \\\'vm-and\\\' S \\\'seconds\\\' p'));
 		$ext->add($sub, $ex, '', new ext_return(''));
 
 		// French specific language format
 		$ex = 'fr';
-		$ext->add($sub, $ex, '', new ext_playback('at-tone-time-exactly'));
+		$ext->add($sub, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 		$ext->add($sub, $ex, '', new ext_sayunixtime('${FutureTime},,IMSp'));
 		$ext->add($sub, $ex, '', new ext_return(''));
 
 		// German specific language format
 		$ex = 'de';
-		$ext->add($sub, $ex, '', new ext_playback('at-tone-time-exactly'));
+		$ext->add($sub, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 		$ext->add($sub, $ex, '', new ext_sayunixtime('${FutureTime},,IMSp'));
 		$ext->add($sub, $ex, '', new ext_return(''));
 
 		// Japanese specific language format
 		$ex = 'ja';
-		$ext->add($sub, $ex, '', new ext_playback('at-tone-time-exactly'));
+		$ext->add($sub, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 		$ext->add($sub, $ex, '', new ext_sayunixtime('${FutureTime},,pIMS'));
 		$ext->add($sub, $ex, '', new ext_return(''));
 	break;
@@ -213,7 +213,7 @@ function infoservices_speakingclock($c) {
 	$ext->add($id, $c, 'playbeep', new ext_playback('beep'));
 	$ext->add($id, $c, '', new ext_wait(5));
 	$ext->add($id, $c, '', new ext_setvar('NumLoops','$[${NumLoops} + 1]'));
-	$ext->add($id, $c, '', new ext_gotoif('$[${NumLoops} < 5]','start')); // 5 is maximum number of times to repeat
+	$ext->add($id, $c, '', new ext_gotoif('$[${NumLoops} < 500]','start')); // 500 is maximum number of times to repeat
 	$ext->add($id, $c, '', new ext_playback('goodbye'));
 	$ext->add($id, $c, '', new ext_hangup(''));
 
@@ -224,25 +224,25 @@ function infoservices_speakingclock($c) {
 
 	// English (default)
 	$ex = 'en';
-	$ext->add($id, $ex, '', new ext_playback('at-tone-time-exactly'));
+	$ext->add($id, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 	$ext->add($id, $ex, '', new ext_sayunixtime('${FutureTime},,kM \\\'vm-and\\\' S \\\'seconds\\\''));
 	$ext->add($id, $ex, '', new ext_return(''));
 
 	// French specific language format
 	$ex = 'fr';
-	$ext->add($id, $ex, '', new ext_playback('at-tone-time-exactly'));
+	$ext->add($id, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 	$ext->add($id, $ex, '', new ext_sayunixtime('${FutureTime},,kMS'));
 	$ext->add($id, $ex, '', new ext_return(''));
 
 	// German specific language format
 	$ex = 'de';
-	$ext->add($id, $ex, '', new ext_playback('at-tone-time-exactly'));
+	$ext->add($id, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 	$ext->add($id, $ex, '', new ext_sayunixtime('${FutureTime},,kMS'));
 	$ext->add($id, $ex, '', new ext_return(''));
 
 	// Japanese specific language format
 	$ex = 'ja';
-	$ext->add($id, $ex, '', new ext_playback('at-tone-time-exactly'));
+	$ext->add($id, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 	$ext->add($id, $ex, '', new ext_sayunixtime('${FutureTime},,kMS'));
 	$ext->add($id, $ex, '', new ext_return(''));
 
@@ -252,25 +252,25 @@ function infoservices_speakingclock($c) {
 
 	// English (default)
 	$ex = 'en';
-	$ext->add($id, $ex, '', new ext_playback('at-tone-time-exactly'));
+	$ext->add($id, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 	$ext->add($id, $ex, '', new ext_sayunixtime('${FutureTime},,IM \\\'vm-and\\\' S \\\'seconds\\\' p'));
 	$ext->add($id, $ex, '', new ext_return(''));
 
 	// French specific language format
 	$ex = 'fr';
-	$ext->add($id, $ex, '', new ext_playback('at-tone-time-exactly'));
+	$ext->add($id, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 	$ext->add($id, $ex, '', new ext_sayunixtime('${FutureTime},,IMSp'));
 	$ext->add($id, $ex, '', new ext_return(''));
 
 	// German specific language format
 	$ex = 'de';
-	$ext->add($id, $ex, '', new ext_playback('at-tone-time-exactly'));
+	$ext->add($id, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 	$ext->add($id, $ex, '', new ext_sayunixtime('${FutureTime},,IMSp'));
 	$ext->add($id, $ex, '', new ext_return(''));
 
-	// Japanese specific language format
+	// Japanese specific language format 
 	$ex = 'ja';
-	$ext->add($id, $ex, '', new ext_playback('at-tone-time-exactly'));
+	$ext->add($id, $ex, '', new ext_playback('hello&at-tone-time-exactly'));
 	$ext->add($id, $ex, '', new ext_sayunixtime('${FutureTime},,pIMS'));
 	$ext->add($id, $ex, '', new ext_return(''));
 }
