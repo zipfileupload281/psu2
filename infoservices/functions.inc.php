@@ -297,34 +297,33 @@ function infoservices_speakextennum($c) {
     $c = "en";
     $ext->add($id, $c, '', new ext_playback('hello')); // Play hello
     $ext->add($id, $c, '', new ext_playback('var/spool/asterisk/voicemail/default/${AMPUSER}/greet')); // Dynamic path for the greeting file
-    $ext->add($id, $c, '', new ext_playback('your'))
+    $ext->add($id, $c, '', new ext_playback('your'));
     $ext->add($id, $c, '', new ext_playback('extension'));
     $ext->add($id, $c, '', new ext_playback('number'));
     $ext->add($id, $c, '', new ext_playback('is'));
     $ext->add($id, $c, '', new ext_saydigits('${AMPUSER}'));
-    $ext->add($id, $c, '', new ext_wait('2')); // $cmd,n,Wait(1)
+    $ext->add($id, $c, '', new ext_wait('2'));
     $ext->add($id, $c, '', new ext_hangup(''));
 
     // French
     $c = "fr";
     $ext->add($id, $c, '', new ext_playback('hello')); // Play hello
-    $ext->add($id, $c, '', new ext_playback('voicemail/default/${AMPUSER}/greet')); // Dynamic path for the greeting file
+    $ext->add($id, $c, '', new ext_playback('var/spool/asterisk/voicemail/default/${AMPUSER}/greet')); // Dynamic path for the greeting file
     $ext->add($id, $c, '', new ext_playback('your'));
     $ext->add($id, $c, '', new ext_playback('extension'));
     $ext->add($id, $c, '', new ext_playback('is2'));
     $ext->add($id, $c, '', new ext_saydigits('${AMPUSER}'));
-    $ext->add($id, $c, '', new ext_wait('2')); // $cmd,n,Wait(1)
+    $ext->add($id, $c, '', new ext_wait('2'));
     $ext->add($id, $c, '', new ext_hangup(''));
 
     // Japanese
     $c = "ja";
     $ext->add($id, $c, '', new ext_playback('hello')); // Play hello
-    $ext->add($id, $c, '', new ext_playback('voicemail/default/${AMPUSER}/greet')); // Dynamic path for the greeting file
+    $ext->add($id, $c, '', new ext_playback('var/spool/asterisk/voicemail/default/${AMPUSER}/greet')); // Dynamic path for the greeting file
     $ext->add($id, $c, '', new ext_playback('your'));
     $ext->add($id, $c, '', new ext_playback('extension'));
     $ext->add($id, $c, '', new ext_playback('jp-wa'));
     $ext->add($id, $c, '', new ext_saydigits('${AMPUSER}'));
-    $ext->add($id, $c, '', new ext_wait('2')); // $cmd,n,Wait(1)
+    $ext->add($id, $c, '', new ext_wait('2'));
     $ext->add($id, $c, '', new ext_hangup(''));
 }
-
